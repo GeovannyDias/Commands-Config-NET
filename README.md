@@ -236,9 +236,15 @@ Usa ReportGenerator para generar un reporte HTML: reportgenerator "-reports:OrqS
 Abre el archivo index.html en el directorio coverage-report para ver los resultados.
 ```
 
-
+## Commands CLI - DOTNET
 
 ```
+Revisar el archivo .nuspec del paquete
+
+dotnet list package # Usar la herramienta dotnet list package
+dotnet add package <nombre-del-paquete> # Usar el dotnet add package y revisar las versiones disponibles
+dotnet nuget list source  # Comprobar las dependencias de cada versión del paquete
+
 ```
 
 
