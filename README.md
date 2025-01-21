@@ -245,6 +245,28 @@ dotnet list package # Usar la herramienta dotnet list package
 dotnet add package <nombre-del-paquete> # Usar el dotnet add package y revisar las versiones disponibles
 dotnet nuget list source  # Comprobar las dependencias de cada versión del paquete
 
+<TargetFramework>net8.0</TargetFramework> # Modifica el archivo del proyecto (.csproj) para que apunte a .NET 8
+
+Actualizar los paquetes NuGet:
+
+dotnet restore
+dotnet nuget update 
+
+Configurar el Proyecto para .NET 6 (soporte ambos entornos NET6 y NET8):
+
+<TargetFrameworks>net6.0;net8.0</TargetFrameworks> # Modificar el archivo .csproj para que sea multiplataforma
+dotnet restore # Actualizar los paquetes NuGet para .NET 6
+
+Compilar el Proyecto para Ambas Versiones de .NET:
+
+dotnet build --framework net8.0
+dotnet build --framework net6.0
+
+dotnet list package # Para verificar las versiones compatibles de los paquetes NuGet (específico para una versión de .NET)
+
+dotnet --list-sdks # Lista de todas las versiones del SDK de .NET
+dotnet --version # Verificar una versión específica
+
 ```
 
 
