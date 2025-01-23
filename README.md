@@ -269,6 +269,60 @@ dotnet --version # Verificar una versión específica
 
 ```
 
+## Versiones del SDK de .NET instaladas (SDK 6, SDK 8 y SDK 9)
+
+```
+1. Verificar la versión de SDK en uso
+
+Puedes verificar la versión de SDK que está utilizando el proyecto actualmente con el siguiente comando:
+
+dotnet --version
+
+Este comando te devolverá la versión de SDK activa en ese momento. Si es la versión que deseas (por ejemplo, 8.0),
+estás listo. Si no, hay varias formas de cambiarla.
+
+2. Especificar la versión del SDK para tu proyecto
+
+Si tienes varios SDKs instalados y deseas asegurarte de que tu proyecto utilice un SDK específico,
+puedes establecer la versión deseada de SDK en tu proyecto usando un archivo global.json.
+
+Crear o actualizar un archivo global.json
+
+Si no tienes un archivo global.json en la raíz de tu proyecto, puedes crear uno con el siguiente comando:
+
+dotnet new globaljson --sdk-version 8.0.x
+Esto indicará que el proyecto debe usar el SDK 8.0. Si prefieres usar la versión 6.0 o 9.0, solo
+reemplaza 8.0.x con la versión deseada.
+
+Ejemplo de global.json:
+
+json
+Copy
+{
+  "sdk": {
+    "version": "8.0.100"
+  }
+}
+
+Este archivo asegurará que, cuando trabajes en tu proyecto, se utilice la versión especificada del SDK.
+
+3. Verificar que el archivo global.json esté funcionando
+
+Una vez creado o actualizado el archivo global.json, puedes verificar si el SDK correcto está siendo utilizado de nuevo con:
+
+dotnet --version
+
+El comando debe devolver la versión especificada en el archivo global.json.
+
+4. Cambiar de SDK sin global.json
+
+Si prefieres no usar un archivo global.json, también puedes cambiar la versión del SDK activando un entorno diferente,
+pero la forma más fiable es mediante el global.json para garantizar que el proyecto siempre use el
+SDK correcto, sin importar el entorno de desarrollo.
+
+```
+
+
 
 
 
