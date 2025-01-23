@@ -124,20 +124,21 @@ puedes utilizar el comando dotnet test con algunas opciones adicionales.
 
 Aquí te muestro cómo hacerlo:
 
-Ejecutar pruebas unitarias con cobertura: Para ejecutar las pruebas unitarias de tu proyecto y obtener el porcentaje de cobertura, utiliza el siguiente comando:
+Ejecutar pruebas unitarias con cobertura: Para ejecutar las pruebas unitarias de tu proyecto y
+obtener el porcentaje de cobertura, utiliza el siguiente comando:
 
-bash
-Copy
 dotnet test --collect:"Code Coverage"
+
 El parámetro --collect:"Code Coverage" indica que se debe recoger la información de cobertura del código durante la ejecución de las pruebas.
 
 Ver resultados de la cobertura: Una vez que hayas ejecutado las pruebas, los resultados de la cobertura de código se
 almacenan en un archivo de salida (por lo general en un archivo .coverage o similar en la carpeta TestResults). Para visualizar estos
-resultados, puedes usar herramientas como Visual Studio, o puedes utilizar el siguiente comando para generar un informe HTML de la cobertura de código:
+resultados, puedes usar herramientas como Visual Studio, o puedes utilizar el siguiente comando para generar un
+informe HTML de la cobertura de código:
 
-bash
-Copy
+
 dotnet reportgenerator -reports:TestResults\*.xml -targetdir:coverage-report
+
 Esto generará un informe HTML en el directorio coverage-report.
 
 Especificar parámetros adicionales de dotnet test: A continuación se muestran algunos parámetros adicionales que puedes usar
@@ -146,13 +147,20 @@ con dotnet test para obtener más detalles o personalizar el comportamiento de l
 Ejecutar pruebas en paralelo:
 
 dotnet test --parallel
-Especificar un filtro de pruebas: Si deseas ejecutar solo un conjunto específico de pruebas (por ejemplo, por nombre), puedes usar el parámetro --filter:
+
+Especificar un filtro de pruebas:
+
+Si deseas ejecutar solo un conjunto específico de pruebas (por ejemplo, por nombre), puedes usar el parámetro --filter:
 
 dotnet test --filter FullyQualifiedName~TestMethodName
+
 Mostrar detalles adicionales: Si quieres ver más detalles sobre la ejecución de las pruebas, puedes usar la opción --verbosity:
 
 dotnet test --verbosity detailed
-Especificar un archivo de configuración: Si tienes un archivo de configuración (como un archivo .runsettings), puedes usarlo con el parámetro --settings:
+
+Especificar un archivo de configuración:
+
+Si tienes un archivo de configuración (como un archivo .runsettings), puedes usarlo con el parámetro --settings:
 
 dotnet test --settings mysettings.runsettings
 Otros ejemplos:
@@ -230,10 +238,12 @@ En el menú superior, ve a Test > Analyze Code Coverage.
 Asegúrate de que el proyecto esté configurado para realizar pruebas con cobertura.
 Luego de ejecutar las pruebas, Visual Studio te mostrará los resultados de la cobertura directamente
 en una ventana con gráficos y detalles.
+
 Resumen:
 Ejecuta las pruebas con cobertura: dotnet test --collect:"Code Coverage".
 Usa ReportGenerator para generar un reporte HTML: reportgenerator "-reports:OrqServiceTest/TestResults/**/*.xml" "-targetdir:coverage-report".
 Abre el archivo index.html en el directorio coverage-report para ver los resultados.
+
 ```
 
 ## Commands CLI - DOTNET
